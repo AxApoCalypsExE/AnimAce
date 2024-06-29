@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AnimAce</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/c8e4d183c2.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./app.js"></script>
+  </head>
+  <body>
+    <section id="landing">
+      <div id="navbar__container" class="navbar__container">
+        <nav class="navbar">
+          <div class="navbar__links--wrapper">
+            <div class="logos--wrapper">
+              <figure class="logo-wrapper">
+                <img class="logo" src="./assets/AnimAceLogo.svg" alt="" />
+              </figure>
+              <figure class="logo-wrapper2">
+                <img class="logo" src="./assets/AnimAceLogo2.svg" alt="" />
+              </figure>
+            </div>
+            <div>
+              <ul class="navbar__links">
+                <li><a class="navbar__link" href="">Home</a></li>
+                <li><a class="navbar__link" id="seriesMode" href="">Series</a></li>
+                <li><a class="navbar__link" id="movieMode" href="">Movies</a></li>
+                <li><a class="navbar__link" href="">Recently Added</a></li>
+                <li><a class="navbar__link" href="">My List</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="navbar__icons--wrapper">
+            <ul class="navbar__icons">
+              <li>
+                <div class="searchbar--wrapper">
+                  <input placeholder="Titles, Genres or Characters" type="text" id="searchbar" class="searchbar">
+                  <button id="searchbarIcon" class="searchbar--icon search__wrapper navbar__icon">
+                    <img class="icon--white icon--hover" src="./assets/search.svg" alt="search" />
+                  </button>
+                </div>
+              </li>
+              <li>
+                <button class="search__wrapper navbar__icon">
+                  <img class="icon--white icon--hover" src="./assets/notif.svg" alt="notif" />
+                </button>
+              </li>
+              <li>
+                <button class="search__wrapper navbar__icon profile__icon">
+                  <img class="icon--white" src="./assets/pfp.svg" alt="account" />
+                  <img
+                    class="icon--white icon--hover dropdown__icon"
+                    src="./assets/dropdown.svg"
+                    alt=""
+                  />
+                </button>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="loading__state">
+        <figure class="loading__img--wrapper">
+          <img class="loading__img" src="./assets/AnimAceLogo.svg" alt="" />
+        </figure>
+      </div>
+      <header>
+        <div class="header__container">
+          <div class="header__row">
+            <div class="anime__info--wrapper">
+              <figure class="background__image--wrapper">
+                <img
+                  class="background__image"
+                  src="https://media.kitsu.io/anime/cover_images/6589/original.png"
+                  alt=""
+                />
+              </figure>
+              <div class="header__info--wrapper">
+                <div class="header__info">
+                  <h1 class="header__title">Anime Title</h1>
+                  <p class="header__para">Brief description...</p>
+                  <h3 class="header__genre"></h3>
+                  <div class="header__buttons">
+                    <button class="header__button--wrapper icon--play">
+                      <figure class="header__icon--wrapper">
+                        <img src="./assets/playbutton.svg" alt="Play Button" />
+                      </figure>
+                      <h2 class="header__button--play">Play</h2>
+                    </button>
+                    <button
+                      class="header__button--wrapper icon--info"
+                      onclick="showMoreInfo()"
+                    >
+                      <figure class="header__icon--wrapper">
+                        <img
+                          class="icon--white"
+                          src="./assets/infobutton.svg"
+                          alt="Info Button"
+                        />
+                      </figure>
+                      <h2 class="header__button--info">More Info</h2>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    </section>
+    <div id="modal" class="modal">
+      <div class="modal__content">
+        <span class="close__button" onclick="closeModal()">&times;</span>
+        <h1 class="modal__title">Anime Title</h1>
+        <img class="modal__image" src="" alt="Anime Image" />
+        <p class="modal__description">Full description...</p>
+        <p class="modal__details">More details here...</p>
+      </div>
+    </div>
+    <section id="sorted__sliders">
+      <div class="slider__container popular__container">
+        <div class="slider__row popular__row">
+          <div class="slider__header popular__header">
+            <h1 class="slider__title">Most Popular</h1>
+            <div class="slider__indicators">
+              <div class="slider__indicator--thumb"></div>
+              <div class="slider__indicator"></div>
+              <div class="slider__indicator"></div>
+              <div class="slider__indicator"></div>
+              <div class="slider__indicator"></div>
+            </div>
+          </div>
+          <div class="slider__content popular__slider">
+            
+          </div>
+          <div class="slider__arrows">
+            <figure class="arrow__wrapper arrow__wrapper--left">
+              <img
+                class="icon--white arrow-left"
+                src="./assets/arrow-left.svg"
+                alt=""
+              />
+            </figure>
+            <figure class="arrow__wrapper arrow__wrapper--right">
+              <img
+                class="icon--white arrow-right"
+                src="./assets/arrow-left.svg"
+                alt=""
+              />
+            </figure>
+          </div>
+        </div>
+      </div>
+      <div class="slider__container romance__container">
+        <div class="slider__row romance__row">
+          <div class="slider__header">
+            <h1 class="slider__title">Romance</h1>
+            <div class="slider__indicators">
+              <div class="slider__indicator--thumb "></div>
+              <div class="slider__indicator"></div>
+              <div class="slider__indicator"></div>
+              <div class="slider__indicator"></div>
+              <div class="slider__indicator"></div>
+            </div>
+          </div>
+          <div class="slider__content romance__slider"></div>
+          <div class="slider__arrows">
+            <figure class="arrow__wrapper arrow__wrapper--left">
+              <img
+                class="icon--white arrow-left"
+                src="./assets/arrow-left.svg"
+                alt=""
+              />
+            </figure>
+            <figure class="arrow__wrapper arrow__wrapper--right">
+              <img
+                class="icon--white arrow-right"
+                src="./assets/arrow-left.svg"
+                alt=""
+              />
+            </figure>
+          </div>
+        </div>
+      </div>
+      <div class="slider__container horror__container">
+        <div class="slider__row horror__row">
+          <div class="slider__header">
+            <h1 class="slider__title">Psychological Horror</h1>
+            <div class="slider__indicators">
+              <div class="slider__indicator--thumb "></div>
+              <div class="slider__indicator"></div>
+              <div class="slider__indicator"></div>
+              <div class="slider__indicator"></div>
+              <div class="slider__indicator"></div>
+            </div>
+          </div>
+          <div class="slider__content horror__slider"></div>
+          <div class="slider__arrows">
+            <figure class="arrow__wrapper arrow__wrapper--left">
+              <img
+                class="icon--white arrow-left"
+                src="./assets/arrow-left.svg"
+                alt=""
+              />
+            </figure>
+            <figure class="arrow__wrapper arrow__wrapper--right">
+              <img
+                class="icon--white arrow-right"
+                src="./assets/arrow-left.svg"
+                alt=""
+              />
+            </figure>
+          </div>
+        </div>
+      </div>
+      <div class="slider__container sport__container">
+        <div class="slider__row sport__row">
+          <div class="slider__header">
+            <h1 class="slider__title">Sports</h1>
+            <div class="slider__indicators">
+              <div class="slider__indicator--thumb "></div>
+              <div class="slider__indicator"></div>
+              <div class="slider__indicator"></div>
+              <div class="slider__indicator"></div>
+              <div class="slider__indicator"></div>
+            </div>
+          </div>
+          <div class="slider__content sport__slider"></div>
+          <div class="slider__arrows">
+            <figure class="arrow__wrapper arrow__wrapper--left">
+              <img
+                class="icon--white arrow-left"
+                src="./assets/arrow-left.svg"
+                alt=""
+              />
+            </figure>
+            <figure class="arrow__wrapper arrow__wrapper--right">
+              <img
+                class="icon--white arrow-right"
+                src="./assets/arrow-left.svg"
+                alt=""
+              />
+            </figure>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+    </section>
+  </body>
+</html>
